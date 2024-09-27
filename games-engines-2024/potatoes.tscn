@@ -1,4 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0dw0awvfpyqt"]
+[gd_scene load_steps=8 format=3 uid="uid://c0dw0awvfpyqt"]
+
+[ext_resource type="Material" uid="uid://db12inqu58ix4" path="res://blue.tres" id="1_7ttk0"]
+[ext_resource type="Material" uid="uid://b4w0nna0wegc6" path="res://green.tres" id="1_va3xh"]
+[ext_resource type="Script" path="res://player.gd" id="2_pfmsw"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5ppn3"]
 size = Vector2(100, 100)
@@ -6,11 +10,32 @@ size = Vector2(100, 100)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oy6dc"]
 albedo_color = Color(0, 1, 0.633333, 1)
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="BoxMesh" id="BoxMesh_ufxc5"]
 
-[node name="ground" type="MeshInstance3D" parent="."]
+[sub_resource type="BoxMesh" id="BoxMesh_rojak"]
+size = Vector3(0.1, 0.1, 1)
+
+[node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.999987, 0.00506143, 0, -0.00506143, 0.999987, 0, 0, 0)
+
+[node name="Ground" type="MeshInstance3D" parent="."]
+material_override = ExtResource("1_va3xh")
 mesh = SubResource("PlaneMesh_5ppn3")
 surface_material_override/0 = SubResource("StandardMaterial3D_oy6dc")
 
-[node name="player" type="MeshInstance3D" parent="."]
-skeleton = NodePath("../ground")
+[node name="Player" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.502045, 0.0025411)
+material_override = ExtResource("1_7ttk0")
+mesh = SubResource("BoxMesh_ufxc5")
+skeleton = NodePath("../Ground")
+script = ExtResource("2_pfmsw")
+
+[node name="Turret" type="MeshInstance3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.5)
+mesh = SubResource("BoxMesh_rojak")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.999999, 8.30383e-06, -0.00164059, -8.30383e-06, 1, 6.98492e-09, 0.00164059, 6.98492e-09, 0.999999, 0, 1.17456, 7.72425)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.865589, 0.500755, 0, -0.500755, 0.865589, 0, 2.40486, 2.98199)
