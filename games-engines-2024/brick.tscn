@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://o44vb2500drd"]
+[gd_scene load_steps=3 format=3 uid="uid://o44vb2500drd"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_b02d7"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d3kwu"]
+
 [node name="Node3D" type="Node3D"]
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Brick" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_b02d7")
+surface_material_override/0 = SubResource("StandardMaterial3D_d3kwu")

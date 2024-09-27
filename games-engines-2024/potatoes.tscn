@@ -37,12 +37,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -0.5)
 mesh = SubResource("BoxMesh_rojak")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.999999, 8.30383e-06, -0.00164059, -8.30383e-06, 1, 6.98492e-09, 0.00164059, 6.98492e-09, 0.999999, 0, 1.17456, 7.72425)
+transform = Transform3D(0.999999, 8.30383e-06, -0.00164059, -8.30383e-06, 1, 6.98492e-09, 0.00164059, 6.98492e-09, 0.999999, 0, 1.16862, 8.89769)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.865589, 0.500755, 0, -0.500755, 0.865589, 0, 2.40486, 2.98199)
 
 [node name="Wall" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.568417, -4.01322)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.574279, -5.17126)
 script = ExtResource("4_7pkfw")
 brick_scene = ExtResource("5_086dm")
