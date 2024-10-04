@@ -43,6 +43,7 @@ func _physics_process(delta: float) -> void:
 	DebugDraw2D.set_text("glo basis.y", global_transform.basis.y)
 	DebugDraw2D.set_text("glo basis.z", global_transform.basis.z)
 	
+	
 	if Input.is_action_pressed("shoot"):
 		var bullet = bullet_scene.instantiate()
 		get_parent().add_child(bullet)

@@ -13,6 +13,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
+	
 	global_position = lerp(global_position, target.global_position, delta * 5.0)
 	look_at(player.global_position)
 	
