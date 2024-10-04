@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d2cnv7v7huh3k"]
+[gd_scene load_steps=17 format=3 uid="uid://ci3lm1cfy8h3b"]
 
 [ext_resource type="Script" path="res://scenes/TPCamera.gd" id="1_1bql5"]
 [ext_resource type="Material" uid="uid://dvo75cymypytd" path="res://green.tres" id="1_ljfv3"]
@@ -6,7 +6,17 @@
 [ext_resource type="Script" path="res://scenes/player.gd" id="3_1hidi"]
 [ext_resource type="Script" path="res://scenes/wall.gd" id="4_x4eqr"]
 [ext_resource type="PackedScene" uid="uid://buu3aq61omx1k" path="res://brick.tscn" id="5_nw2f7"]
-[ext_resource type="PackedScene" uid="uid://c1bnq83851e46" path="res://bullet.tscn" id="6_ngcvm"]
+[ext_resource type="PackedScene" path="res://bullet.tscn" id="6_ngcvm"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xot7b"]
+sky_top_color = Color(0.878948, 0.538872, 1, 1)
+
+[sub_resource type="Sky" id="Sky_dgisu"]
+sky_material = SubResource("ProceduralSkyMaterial_xot7b")
+
+[sub_resource type="Environment" id="Environment_xpqwr"]
+background_mode = 2
+sky = SubResource("Sky_dgisu")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_00q4b"]
 size = Vector2(100, 100)
@@ -24,6 +34,9 @@ size = Vector3(0.1, 0.1, 1)
 size = Vector3(0.1, 0.1, 1)
 
 [node name="root" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_xpqwr")
 
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target", "player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.687456, 7.28339)
