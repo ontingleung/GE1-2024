@@ -10,6 +10,10 @@ var theta
 var q1:Quaternion
 var q2:Quaternion
 var t
+
+f
+adsf
+
 func _ready() -> void:
 	
 	to_player = global_position - tank.global_position 
