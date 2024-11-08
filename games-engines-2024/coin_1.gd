@@ -4,7 +4,10 @@ extends CSGCylinder3D
 @export var gravity:Vector3 = Vector3(0, -9.8, 0)
 @export var time:float = 0
 
+
 func _ready() -> void:
+#	just a comment for the commit
+	
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
