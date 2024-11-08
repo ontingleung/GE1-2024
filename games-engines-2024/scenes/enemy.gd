@@ -12,7 +12,7 @@ var q2:Quaternion
 
 var t = 0
 
-# Called when the node enters the scene tree for the first time.
+# Ca lled when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
 	to_player = tank.global_position - global_position
